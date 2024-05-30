@@ -8,7 +8,7 @@ import { useAuth } from '../core/Auth'
 import { useNavigate } from 'react-router-dom'
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
 import { createProfileSiswa } from '../../../api/Request/profile.siswa.api'
-import { CreateProfileSiswaType } from '../../../interface/profile.siswa.interface'
+import { CreateProfileSiswaNewType, CreateProfileSiswaType } from '../../../interface/profile.siswa.interface'
 import { AuthModel } from '../../../interface/auth.interface'
 import { createPeringkatByUID } from '../../../api/Request/peringkat.siswa.api'
 import { CreatePeringkatType } from '../../../interface/peringkat.interface'
@@ -59,10 +59,11 @@ export function Registration() {
         const ress = await createUserWithEmailAndPassword(auth, values.email, values.password);
         if (ress.user) {
           const image = `https://api.dicebear.com/6.x/adventurer/svg?seed=${values.fullname}`
-          const bodyProfile: CreateProfileSiswaType = {
+          const bodyProfile: CreateProfileSiswaNewType = {
             name: values.fullname,
             nomor_absen: values.absen,
             email: values.email,
+            password: values.password,
             imageProfile: image,
             kelompok: "1",
             type: "siswa"

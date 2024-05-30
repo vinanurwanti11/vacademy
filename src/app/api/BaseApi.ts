@@ -11,7 +11,7 @@ export const authKey = process.env.REACT_APP_AUTH_KEY;
 
 const setupAPIClient = () => {
   API = axios.create({
-    baseURL: "https://v-academy-b5759-default-rtdb.firebaseio.com/",
+    baseURL: "https://vacademy-d9ad7-default-rtdb.firebaseio.com/",
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',

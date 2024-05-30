@@ -5,14 +5,13 @@ import { getFirestore } from "firebase/firestore";
 import { getMessaging } from "firebase/messaging"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBP_1svh1CvOlcZUcpEezTLdJEYZLElFKk",
-  authDomain: "v-academy-b5759.firebaseapp.com",
-  databaseURL: "https://v-academy-b5759-default-rtdb.firebaseio.com/",
-  projectId: "v-academy-b5759",
-  storageBucket: "v-academy-b5759.appspot.com",
-  messagingSenderId: "942842565276",
-  appId: "1:942842565276:web:6d4396e2ed59d078165359",
-  measurementId: "G-XFQD3YGBX5"
+  apiKey: "AIzaSyC3tzSLRFkbKCaDSBLFQegKi8aWZFcijEk",
+  authDomain: "vacademy-d9ad7.firebaseapp.com",
+  projectId: "vacademy-d9ad7",
+  storageBucket: "vacademy-d9ad7.appspot.com",
+  messagingSenderId: "387842638307",
+  appId: "1:387842638307:web:6066a1d009155b0675a0d6",
+  measurementId: "G-526TLHWBZ8"
 };
 
 // Initialize Firebase

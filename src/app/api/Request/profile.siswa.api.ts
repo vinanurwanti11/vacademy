@@ -1,4 +1,4 @@
-import { CreateProfileSiswaType, ProfileSiswaTypeResponse } from '../../interface/profile.siswa.interface';
+import { CreateProfileSiswaNewType, CreateProfileSiswaType, ProfileSiswaTypeResponse } from '../../interface/profile.siswa.interface';
 import BaseApi, { authKey } from '../BaseApi';
 
 export const getProfileSiswa = async (uid: string): Promise<CreateProfileSiswaType[]> => {
@@ -10,7 +10,7 @@ export const getProfileSiswa = async (uid: string): Promise<CreateProfileSiswaTy
   return data;
 };
 
-export const createProfileSiswa = async (uid: string, props: CreateProfileSiswaType): Promise<any> => {
+export const createProfileSiswa = async (uid: string, props: CreateProfileSiswaNewType): Promise<any> => {
   const { data } = await BaseApi().request<any>({
     url: `users/siswa/${uid}.json?auth=${authKey}`,
     method: 'POST',
