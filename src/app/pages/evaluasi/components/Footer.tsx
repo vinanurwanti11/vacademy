@@ -59,84 +59,84 @@ const Footer: FC<Props> = ({
   }, [materiParent, materi])
 
   const updatePage = (pages: number) => {
-    // if (pages > page.currentPage && finalHasilSoal.length === 0) {
-    //   if (hasilSoal.length >= page.currentPage && page.currentPage !== materi[0].materi.isiMateri.length) {
-    page.setPage(pages)
-    //   } else if (hasilSoal.length === materi[0].materi.isiMateri.length) {
-    //     const swalWithBootstrapButtons = Swal.mixin({
-    //       customClass: {
-    //         confirmButton: 'btn btn-success',
-    //         cancelButton: 'btn btn-white'
-    //       },
-    //       buttonsStyling: false
-    //     })
-    //     const swalSuccess = Swal.mixin({
-    //       customClass: {
-    //         confirmButton: 'btn btn-success',
-    //       },
-    //       buttonsStyling: false
-    //     })
-    //     swalWithBootstrapButtons.fire({
-    //       title: `Kirimkan Jawaban?`,
-    //       icon: 'info',
-    //       showCancelButton: true,
-    //       cancelButtonText: 'Batalkan',
-    //       confirmButtonText: 'Kirim!',
-    //       reverseButtons: true,
-    //     }).then(async (result) => {
-    //       if (result.isConfirmed) {
-    //         try {
-    //           if (uuid) {
-    //             let point = 0
-    //             hasilSoal.map(e => {
-    //               if (e.hasil) {
-    //                 point++
-    //               }
-    //             })
-    //             const body: BodySendEvaluasi = {
-    //               hasilSoal: hasilSoal,
-    //               poin: point
-    //             }
-    //             const resSendEvaluasi = await sendEvaluasi(materiParent, uuid, body)
-    //             if (resSendEvaluasi) {
-    //               swalSuccess.fire({
-    //                 title: `Jawaban Berhasil Dikirim`,
-    //                 icon: 'success',
-    //                 confirmButtonText: 'Dismiss',
-    //               }).then(async (result) => {
-    //                 if (result.isConfirmed || result.dismiss) {
-    //                   navigate('/evaluasi')
-    //                 }
-    //               })
-    //             }
-    //           }
-    //         } catch (error) {
-    //           console.error(error);
-    //         }
-    //       }
-    //     })
-    //   } else {
-    //     const swalSuccess = Swal.mixin({
-    //       customClass: {
-    //         confirmButton: 'btn btn-danger',
-    //       },
-    //       buttonsStyling: false,
-    //     })
-    //     swalSuccess
-    //       .fire({
-    //         icon: 'warning',
-    //         confirmButtonText: 'Dismiss',
-    //         html: `<h3 style="text-align:center; font-weight:bold; color:gray;'">Latihannya jangan lupa diisi dulu ya 🤗</h3>`,
-    //         reverseButtons: true,
-    //       })
-    //   }
-    // } else {
-    //   if (pages <= materi[0].materi.isiMateri.length) {
-    //     page.setPage(pages)
-    //   } else if (pages > materi[0].materi.isiMateri.length && finalHasilSoal.length !== 0) {
-    //     navigate('/evaluasi')
-    //   }
-    // }
+    if (pages > page.currentPage && finalHasilSoal.length === 0) {
+      if (hasilSoal.length >= page.currentPage && page.currentPage !== materi[0].materi.isiMateri.length) {
+        page.setPage(pages)
+      } else if (hasilSoal.length === materi[0].materi.isiMateri.length) {
+        const swalWithBootstrapButtons = Swal.mixin({
+          customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-white'
+          },
+          buttonsStyling: false
+        })
+        const swalSuccess = Swal.mixin({
+          customClass: {
+            confirmButton: 'btn btn-success',
+          },
+          buttonsStyling: false
+        })
+        swalWithBootstrapButtons.fire({
+          title: `Kirimkan Jawaban?`,
+          icon: 'info',
+          showCancelButton: true,
+          cancelButtonText: 'Batalkan',
+          confirmButtonText: 'Kirim!',
+          reverseButtons: true,
+        }).then(async (result) => {
+          if (result.isConfirmed) {
+            try {
+              if (uuid) {
+                let point = 0
+                hasilSoal.map(e => {
+                  if (e.hasil) {
+                    point++
+                  }
+                })
+                const body: BodySendEvaluasi = {
+                  hasilSoal: hasilSoal,
+                  poin: point
+                }
+                const resSendEvaluasi = await sendEvaluasi(materiParent, uuid, body)
+                if (resSendEvaluasi) {
+                  swalSuccess.fire({
+                    title: `Jawaban Berhasil Dikirim`,
+                    icon: 'success',
+                    confirmButtonText: 'Dismiss',
+                  }).then(async (result) => {
+                    if (result.isConfirmed || result.dismiss) {
+                      navigate('/evaluasi')
+                    }
+                  })
+                }
+              }
+            } catch (error) {
+              console.error(error);
+            }
+          }
+        })
+      } else {
+        const swalSuccess = Swal.mixin({
+          customClass: {
+            confirmButton: 'btn btn-danger',
+          },
+          buttonsStyling: false,
+        })
+        swalSuccess
+          .fire({
+            icon: 'warning',
+            confirmButtonText: 'Dismiss',
+            html: `<h3 style="text-align:center; font-weight:bold; color:gray;'">Latihannya jangan lupa diisi dulu ya 🤗</h3>`,
+            reverseButtons: true,
+          })
+      }
+    } else {
+      if (pages <= materi[0].materi.isiMateri.length) {
+        page.setPage(pages)
+      } else if (pages > materi[0].materi.isiMateri.length && finalHasilSoal.length !== 0) {
+        navigate('/evaluasi')
+      }
+    }
   }
 
 

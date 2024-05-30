@@ -223,11 +223,11 @@ const Evaluasi = () => {
                     <h1 className='mb-10 ms-20' style={{ fontSize: '30px' }}>Evaluasi Soal</h1>
                     <div className="d-flex row mt-10" style={{ justifyContent: 'center' }}>
                       <div className="card col-sm-4 p-0 rounded shadow-sm me-5" onClick={() => {
-                        // if (!status1) {
-                        navigate('/evaluasi/soal', { state: { materiParent: "pretest" } })
-                        // } else {
-                        //   warningAlert()
-                        // }
+                        if (!status1) {
+                          navigate('/evaluasi/soal', { state: { materiParent: "pretest" } })
+                        } else {
+                          warningAlert()
+                        }
                       }} style={{ width: '25%', height: '200px', cursor: 'pointer' }}>
                         <div className="card-body p-0">
                           <div className='d-flex rounded-top ' style={{ backgroundColor: '#E1D808', height: '60%', justifyContent: 'center' }}>
@@ -243,11 +243,11 @@ const Evaluasi = () => {
                       </div>
 
                       <div className="card col-sm-4 p-0 border rounded shadow-sm" onClick={() => {
-                        // if (!status2) {
-                        navigate('/evaluasi/soal', { state: { materiParent: "posttest" } })
-                        // } else {
-                        //   warningAlert()
-                        // }
+                        if (!status2) {
+                          navigate('/evaluasi/soal', { state: { materiParent: "posttest" } })
+                        } else {
+                          warningAlert()
+                        }
                       }} style={{ width: '25%', height: '200px', cursor: 'pointer' }}>
                         <div className="card-body p-0">
                           <div className='d-flex rounded-top ' style={{ backgroundColor: '#0893E1', height: '60%', justifyContent: 'center' }}>
@@ -263,11 +263,11 @@ const Evaluasi = () => {
                       </div>
 
                       <div className="card col-sm-4 p-0 rounded shadow-sm ms-5" onClick={() => {
-                        // if (!status3) {
-                        navigate('/evaluasi/soal', { state: { materiParent: "preLogic" } })
-                        // } else {
-                        //   warningAlert()
-                        // }
+                        if (!status3) {
+                          navigate('/evaluasi/soal', { state: { materiParent: "preLogic" } })
+                        } else {
+                          warningAlert()
+                        }
                       }} style={{ width: '25%', height: '200px', cursor: 'pointer' }}>
                         <div className="card-body p-0">
                           <div className='d-flex rounded-top ' style={{ backgroundColor: '#E10856', height: '60%', justifyContent: 'center' }}>
@@ -285,11 +285,11 @@ const Evaluasi = () => {
 
                     <div className="d-flex row mt-10" style={{ justifyContent: 'center' }}>
                       <div className="card col-sm-4 p-0 rounded shadow-sm me-5" onClick={() => {
-                        // if (!status4) {
-                        navigate('/evaluasi/soal', { state: { materiParent: "postLogic" } })
-                        // } else {
-                        //   warningAlert()
-                        // }
+                        if (!status4) {
+                          navigate('/evaluasi/soal', { state: { materiParent: "postLogic" } })
+                        } else {
+                          warningAlert()
+                        }
                       }} style={{ width: '25%', height: '200px', cursor: 'pointer' }}>
                         <div className="card-body p-0">
                           <div className='d-flex rounded-top ' style={{ backgroundColor: '#E108B1', height: '60%', justifyContent: 'center' }}>
@@ -304,11 +304,11 @@ const Evaluasi = () => {
                         </div>
                       </div>
                       <div className="card col-sm-4 p-0 rounded shadow-sm ms-5" onClick={() => {
-                        // if (!status5) {
-                        navigate('/evaluasi/soal', { state: { materiParent: "penilaianMedia" } })
-                        // } else {
-                        //   warningAlert()
-                        // }
+                        if (!status5) {
+                          navigate('/evaluasi/soal', { state: { materiParent: "penilaianMedia" } })
+                        } else {
+                          warningAlert()
+                        }
                       }} style={{ width: '25%', height: '200px', cursor: 'pointer' }}>
                         <div className="card-body p-0">
                           <div className='d-flex rounded-top ' style={{ backgroundColor: '#08E138', height: '60%', justifyContent: 'center' }}>
