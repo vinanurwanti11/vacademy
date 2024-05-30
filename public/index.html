@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="V Academy" />
+  <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" />
+  <script type="text/javascript">
+    (function (l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function (s) {
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))
+  </script>
+  <title>V Academy</title>
+  <link rel="shortcut icon" href="%PUBLIC_URL%/media/logos/ic_logo_saja.png" />
+  <link rel="stylesheet" id="layout-styles-anchor" href="%PUBLIC_URL%/splash-screen.css" />
+  <style>
+    .swal2-popup {
+      font-size: 1.2rem !important;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+</head>
+
+<body id="kt_body" class="page-loading">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <!--begin::Theme mode setup on page load-->
+  <script>
+    if (document.documentElement) {
+      var defaultThemeMode = "system";
+
+      var hasKTName = document.body.hasAttribute("data-kt-name");
+      var lsKey = "kt_" + (hasKTName ? name + "_" : "") + "theme_mode_value"
+      var themeMode = localStorage.getItem(lsKey);
+      if (!themeMode) {
+        if (defaultThemeMode === "system") {
+          themeMode =
+            window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        } else {
+          themeMode = defaultThemeMode;
+        }
+      }
+
+      document.documentElement.setAttribute("data-theme", themeMode);
+    }
+  </script>
+
+  <!--end::Theme mode setup on page load-->
+  <script>
+    // Inisialisasi animasi Lottie
+    var animation = bodymovin.loadAnimation({
+      container: document.getElementById('lottie-container'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: "%PUBLIC_URL%/media/loading/loading-beamco.json"
+    });
+  </script>
+  
+
+  <div id="root" class="d-flex flex-column flex-root"></div>
+  <div id="splash-screen" class="splash-screen">
+    <img src="%PUBLIC_URL%/media/logos/ic_logo_saja.png" alt="V Academy" />
+    <span>Loading ...</span>
+    <div id="lottie-container"></div>
+  </div>
+  <div id="root-modals"></div>
+</body>
+
+</html>
